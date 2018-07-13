@@ -18,7 +18,7 @@ namespace LineDrawer.Test
             // slope = 1.5; y-Intercept = 0.5
             float slope = 1.5f;
             float yIntercept = 0.5f;
-            List<PointLocation> locations = line.ComputePointsForLine(1, 2, 5, 8, 0.1f);
+            List<PointLocation> locations = line.ComputePointsForLine(1, 2, 5, 8, 0.01f);
 
             Assert.AreEqual(locations[0].Slope, slope);
             Assert.AreEqual(locations[0].YIntercept, yIntercept);

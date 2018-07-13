@@ -41,19 +41,20 @@ namespace LineDrawer
 
         private void DrawingCanvas_Paint(object sender, PaintEventArgs e)
         {
+            Line line = new Line();
+            List<PointLocation> locations = line.ComputePointsForLine(25, 14, 530, 280, 1);
 
-           
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < locations.Count; i++)
             {
-                Point point = new Point(i, 100);
+                Point point = new Point((int)(locations[i].X), (int)locations[i].Y);
                 Brush brush = Brushes.Black;
                 FontFamily fontFamily = new FontFamily("Arial");
 
                 Font font = new Font(fontFamily, 20.0f, FontStyle.Bold, GraphicsUnit.Point);
                 e.Graphics.DrawString(".", font, brush, point);
             }
-            
+
 
         }
 
