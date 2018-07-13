@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineDrawer", "LineDrawer\LineDrawer.csproj", "{3D669ABB-FC67-4C0B-8D09-90F706CAEA10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineDrawer.Test", "LineDrawer.Test\LineDrawer.Test.csproj", "{EE684B2D-A6E5-4FD9-BFF9-991EC6E9A6EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3D669ABB-FC67-4C0B-8D09-90F706CAEA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D669ABB-FC67-4C0B-8D09-90F706CAEA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D669ABB-FC67-4C0B-8D09-90F706CAEA10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE684B2D-A6E5-4FD9-BFF9-991EC6E9A6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE684B2D-A6E5-4FD9-BFF9-991EC6E9A6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE684B2D-A6E5-4FD9-BFF9-991EC6E9A6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE684B2D-A6E5-4FD9-BFF9-991EC6E9A6EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
