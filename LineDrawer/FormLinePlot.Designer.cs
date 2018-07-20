@@ -1,6 +1,6 @@
 ﻿namespace LineDrawer
 {
-    partial class Form1
+    partial class FormLinePlot
     {
         /// <summary>
         /// Required designer variable.

@@ -51,6 +51,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CircleTest.cs" />
     <Compile Include="LineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +59,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CirclePlot\CirclePlot.csproj">
+      <Project>{0acbc0b8-1e66-421b-91ca-b0fc10284eff}</Project>
+      <Name>CirclePlot</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LineDrawer\LineDrawer.csproj">
       <Project>{3d669abb-fc67-4c0b-8d09-90f706caea10}</Project>
       <Name>LineDrawer</Name>

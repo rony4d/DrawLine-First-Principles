@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LineDrawer
 {
-    public partial class Form1 : Form
+    public partial class FormLinePlot : Form
     {
-        public Form1()
+        public FormLinePlot()
         {
             InitializeComponent();
         }
