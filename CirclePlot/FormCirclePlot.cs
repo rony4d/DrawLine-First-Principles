@@ -31,25 +31,50 @@ namespace CirclePlot
         {
 
             CircleLogic circleLogic = new CircleLogic();
-            int h = 200;
-            int k = 200;
-            int r = 50;
-            int numberOfPoints = 16;
+            int h = 280;
+            int k = 160;
+            int r = 80;
+            int numberOfPoints = 40;
             double theta_intervals_in_radians = (2 * Math.PI) / numberOfPoints;
-            List<PointLocation> locations = circleLogic.ComputePointsForCirclePlot(h, k, r, theta_intervals_in_radians);
 
 
-            for (int i = 0; i < locations.Count; i++)
+            List<CirclePointLocation> clockLocations = circleLogic.ComputeClockHourMinutePoints(h, k, r);
+
+            //List<PointLocation> locations = circleLogic.ComputePointsForCirclePlot(h, k, r, theta_intervals_in_radians);
+
+            //for (int i = 0; i < locations.Count; i++)
+            //{
+
+            //    Point point = new Point((int)(locations[i].X), (int)locations[i].Y);
+            //    Brush brush = Brushes.Black;
+            //    FontFamily fontFamily = new FontFamily("Arial");
+
+            //    Font font = new Font(fontFamily, 20.0f, FontStyle.Bold, GraphicsUnit.Point);
+            //    e.Graphics.DrawString(".", font, brush, point);
+            //}
+
+            for (int i = 0; i < clockLocations.Count; i++)
             {
-                Point point = new Point((int)(locations[i].X), (int)locations[i].Y);
-                Brush brush = Brushes.Black;
-                FontFamily fontFamily = new FontFamily("Arial");
+                if (clockLocations[i].IsHourHand)
+                {
+                    Point point = new Point((int)(clockLocations[i].X), (int)clockLocations[i].Y);
+                    Brush brush = Brushes.Red;
+                    FontFamily fontFamily = new FontFamily("Arial");
 
-                Font font = new Font(fontFamily, 20.0f, FontStyle.Bold, GraphicsUnit.Point);
-                e.Graphics.DrawString(".", font, brush, point);
+                    Font font = new Font(fontFamily, 20.0f, FontStyle.Bold, GraphicsUnit.Point);
+                    e.Graphics.DrawString(@".", font, brush, point);
+                }
+                else
+                {
+                    Point point = new Point((int)(clockLocations[i].X), (int)clockLocations[i].Y);
+                    Brush brush = Brushes.Black;
+                    FontFamily fontFamily = new FontFamily("Arial");
+
+                    Font font = new Font(fontFamily, 20.0f, FontStyle.Bold, GraphicsUnit.Point);
+                    e.Graphics.DrawString(".", font, brush, point);
+                }
+
             }
-
-
 
         }
     }

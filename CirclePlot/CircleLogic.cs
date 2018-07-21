@@ -35,8 +35,6 @@ namespace CirclePlot
             int r = radius;
             double theta_step = thetaIntervalRadians;
             double pi = Math.PI;
-            int x_scale = 10;
-            int y_scale = 10;
             List<PointLocation> pointLocations = new List<PointLocation>();
             for (double theta = 0; theta < (2*pi); theta += theta_step)
             {
@@ -49,6 +47,57 @@ namespace CirclePlot
             }
             return pointLocations;
 
+        }
+        /// <summary>
+        /// To mark off a circle
+        /// 1. The hour hands are 12, therefore the hour theta intervals = 2*Math.PI/12 (radians)
+        /// 2. The minute hands are 60, there the minute theta intervals =  2*Math.PI/60 (radians)
+        /// </summary>
+        /// <param name="x_center_cordinate"></param>
+        /// <param name="y_center_cordinate"></param>
+        /// <param name="radius"></param>
+        /// <returns></returns>
+        public List<CirclePointLocation> ComputeClockHourMinutePoints(int x_center_cordinate, int y_center_cordinate, int radius)
+        {
+
+            int h = x_center_cordinate;
+            int k = y_center_cordinate;
+            int r = radius;
+            double hour_theta_step = 2 * Math.PI / 12;
+            double minute_theta_step = 2 * Math.PI / 60;
+            double pi = Math.PI;
+            int index = 0;
+            List<CirclePointLocation> pointLocations = new List<CirclePointLocation>();
+            for (double theta = 0; theta < (2 * pi); theta += hour_theta_step)
+            {
+                CirclePointLocation pointLocation = new CirclePointLocation();
+                double x = h + (r * Math.Cos(theta));
+                double y = k + (r * Math.Sin(theta));
+                pointLocation.X = x;
+                pointLocation.Y = y;
+                pointLocation.IsHourHand = true;
+                pointLocations.Add(pointLocation);
+            }
+
+            for (double theta = 0; theta < (2 * pi); theta += minute_theta_step)
+            {
+                // if the index/5 gives remainder of zero, then it is an hour hand
+                // since we will be having 60 minute markoffs
+                if (index%5 != 0)
+                {
+                    CirclePointLocation pointLocation = new CirclePointLocation();
+                    double x = h + (r * Math.Cos(theta));
+                    double y = k + (r * Math.Sin(theta));
+                    pointLocation.X = x;
+                    pointLocation.Y = y;
+                    pointLocation.IsMinuteHand = true;
+                    pointLocations.Add(pointLocation);
+                }
+                index++;
+                
+                
+            }
+            return pointLocations;
         }
     }
 }

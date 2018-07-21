@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CircleLogic.cs" />
+    <Compile Include="CirclePointLocation.cs" />
     <Compile Include="FormCirclePlot.cs">
       <SubType>Form</SubType>
     </Compile>
