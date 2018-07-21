@@ -52,7 +52,12 @@ namespace CirclePlot
             //    Font font = new Font(fontFamily, 20.0f, FontStyle.Bold, GraphicsUnit.Point);
             //    e.Graphics.DrawString(".", font, brush, point);
             //}
+            Point origin = new Point(h, k);
+            Brush originBrush = Brushes.Purple;
+            FontFamily originFontFamily = new FontFamily("Arial");
 
+            Font originFont = new Font(originFontFamily, 20.0f, FontStyle.Bold, GraphicsUnit.Point);
+            e.Graphics.DrawString(@".", originFont, originBrush, origin);
             for (int i = 0; i < clockLocations.Count; i++)
             {
                 if (clockLocations[i].IsHourHand)
